@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lichess Appeal System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .graph-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        canvas {
+            border: 1px solid #3498db;
+            border-radius: 8px;
+            max-width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lichess Appeal System</h1>
+        <p>Navigating the Appeals Process on Lichess</p>
+    </header>
+
+    <section>
+        <h2>How the Appeal System Works on Lichess</h2>
+        <p>
+            The Lichess Appeal System provides users with a mechanism to contest account-related decisions, including bans. It ensures a fair and transparent process for users to appeal and present their case to the Lichess team.
+        </p>
+        <p>
+            Users can utilize the appeal system to request a review of their account status, presenting evidence and context to support their appeal.
+        </p>
+    </section>
+
+    <section>
+        <h2>Rights of an Appeal on Lichess</h2>
+        <p>
+            The appeal system grants users the right to contest account-related actions taken by Lichess. It aims to provide a balanced and just resolution, considering user input and additional context before making final decisions.
+        </p>
+        <p>
+            Lichess is committed to maintaining a fair and respectful online chess community, and the appeal system plays a crucial role in upholding these principles.
+        </p>
+    </section>
+
+    <section>
+        <h2>Modern Working Graphs</h2>
+        <div class="graph-container">
+            <!-- Chart.js Appeal System Graph -->
+            <canvas id="appealGraphChartJS"></canvas>
+        </div>
+        <div class="graph-container">
+            <!-- D3.js Appeal System Graph -->
+            <svg id="appealGraphD3"></svg>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lichess Insight Hub. All rights reserved.</p>
+    </footer>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <script>
+        // JavaScript code for the modern working graphs using Chart.js and D3.js
+        document.addEventListener('DOMContentLoaded', function () {
+            // Chart.js Appeal System Graph
+            var ctxChartJS = document.getElementById('appealGraphChartJS').getContext('2d');
+            var myChartChartJS = new Chart(ctxChartJS, {
+                type: 'bar',
+                data: {
+                    labels: ['Appeal Requested', 'Appeal Accepted', 'Appeal Denied'],
+                    datasets: [{
+                        label: 'Appeal System Analysis (Chart.js)',
+                        data: [30, 15, 5], // Replace with actual data
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 255, 0, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 255, 0, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 40 // Set maximum value for the graph
+                        }
+                    }
+                }
+            });
+
+            // D3.js Appeal System Graph
+            var dataD3 = [
+                { status: 'Appeal Requested', count: 30 },
+                { status: 'Appeal Accepted', count: 15 },
+                { status: 'Appeal Denied', count: 5 }
+            ];
+
+            var margin = { top: 10, right: 30, bottom: 30, left: 60 };
+            var width = 600 - margin.left - margin.right;
+            var height = 400 - margin.top - margin.bottom;
+
+            var svg = d3.select('#appealGraphD3')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+            var x = d3.scaleBand()
+                .domain(dataD3.map(d => d.status))
+                .range([0, width])
+                .padding(0.1);
+
+            var y = d3.scaleLinear()
+                .domain([0, d3.max(dataD3, d => d.count)])
+                .range([height, 0]);
+
+            var color = d3.scaleOrdinal()
+                .domain(dataD3.map(d => d.status))
+                .range(['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 255, 0, 1)']);
+
+            var xAxis = d3.axisBottom(x);
+            var yAxis = d3.axisLeft(y);
+
+            svg.append('g')
+                .attr('transform', 'translate(0,' + height + ')')
+                .call(xAxis);
+
+            svg.append('g')
+                .call(yAxis);
+
+            svg.selectAll()
+                .data(dataD3)
+                .enter().append('rect')
+                .attr('x', d => x(d.status))
+                .attr('y', d => y(d.count))
+                .attr('width', x.bandwidth())
+                .attr('height', d => height - y(d.count))
+                .attr('fill', d => color(d.status))
+                .on('mouseover', function (event, d) {
+                    d3.select(this).attr('fill', d3.rgb(color(d.status)).darker());
+                })
+                .on('mouseout', function (event, d) {
+                    d3.select(this).attr('fill', color(d.status));
+                });
+        });
+    </script>
+</body>
+
+</html>
