@@ -132,10 +132,10 @@
             var myChartChartJS = new Chart(ctxChartJS, {
                 type: 'bar',
                 data: {
-                    labels: ['Appeal Requested', 'Appeal Accepted', 'Appeal Denied'],
+                    labels: ['Appeal Requested', 'Appeal Accepted', 'Appeal Denied', 'Appeal Response', 'Appeal Ignored'],
                     datasets: [{
                         label: 'Appeal System Analysis (Chart.js)',
-                        data: [30, 15, 5], // Replace with actual data
+                        data: [30, 15, 5, 1000, 80], // Replace with actual data
                         backgroundColor: [
                             'rgba(75, 192, 192, 0.2)',
                             'rgba(255, 99, 132, 0.2)',
@@ -163,7 +163,9 @@
             var dataD3 = [
                 { status: 'Appeal Requested', count: 30 },
                 { status: 'Appeal Accepted', count: 15 },
-                { status: 'Appeal Denied', count: 5 }
+                { status: 'Appeal Denied', count: 5 },
+                { status: 'Appeal Respond', count: 1000},
+                { status: 'Appeal Ignored', count: 80}
             ];
 
             var margin = { top: 10, right: 30, bottom: 30, left: 60 };
