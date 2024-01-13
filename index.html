@@ -53,6 +53,7 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            display: block; /* Initially show the footer */
         }
 
         a {
@@ -97,13 +98,29 @@
                 margin: 0 auto;
             }
         }
+
+        #toggleButton {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
     </style>
+    <script>
+        function toggleFooter() {
+            var footer = document.getElementById('copyright');
+            footer.style.display = (footer.style.display === 'none' || footer.style.display === '') ? 'block' : 'none';
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <h1>Lichess Insight Hub</h1>
         <p>Unlock the Secrets of Lichess</p>
+        <button id="toggleButton" onclick="toggleFooter()">Toggle Copyright</button>
     </header>
 
     <section id="about-section">
@@ -187,7 +204,7 @@
         <p>Clear breakdown of Lichess Appeal System after any individual user's personal account got banned forever. This page will show lichess appeal system on Lichess. How it works and save from whole enviournmemt.</p>
     </section>
 
-    <footer>
+    <footer id="copyright">
         <p>&copy; 2024 Lichess Insight Hub. All rights reserved.</p>
     </footer>
 </body>
