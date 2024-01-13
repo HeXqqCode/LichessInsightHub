@@ -10,21 +10,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #555;
+            background-color: #f7f7f7;
+            color: #333;
         }
 
         header {
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            background-color: #3498db;
+            color: #fff;
             text-align: center;
             padding: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
         }
 
         header p {
@@ -36,20 +36,20 @@
             margin: 20px;
             padding: 20px;
             background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease-in-out;
         }
 
         section:hover {
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
 
         footer {
             text-align: center;
-            padding: 15px;
-            background-color: #2c3e50;
-            color: #ecf0f1;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
             position: fixed;
             bottom: 0;
             width: 100%;
@@ -59,11 +59,10 @@
             color: #3498db;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease-in-out;
         }
 
         a:hover {
-            color: #2980b9;
+            text-decoration: underline;
         }
 
         /* Additional Styles */
@@ -75,24 +74,23 @@
             line-height: 1.6;
         }
 
-        /* Unique Styles for Each Section */
-        #about-section {
-            background-color: #e74c3c;
-            color: #fff;
+        #about-section,
+        #berserk-section,
+        #analysis-section,
+        #rating-section,
+        #tv-section,
+        #tournament-section,
+        #cheat-section,
+        #developer-section,
+        #moderator-section,
+        #donate-section,
+        #interface-section,
+        #leaderboard-section,
+        #personalchatsystem-section {
+            margin-bottom: 40px;
         }
 
-        #berserk-section {
-            background-color: #27ae60;
-            color: #fff;
-        }
-
-        #analysis-section {
-            background-color: #f39c12;
-            color: #fff;
-        }
-
-        /* Repeat for other sections with unique styles */
-
+        /* Wider Content */
         @media only screen and (min-width: 768px) {
             body {
                 max-width: 1200px;
@@ -110,12 +108,84 @@
 
     <section id="about-section">
         <h2>About Lichess Insight Hub</h2>
-        <p>Your gateway to in-depth knowledge about Lichess. Explore, learn, and elevate your chess experience.</p>
-        <p>Privacy-respecting platform with valuable insights, strategies, and analyses for the chess community.</p>
-        <p>Accepting cookies for an enhanced user experience while prioritizing your trust and privacy.</p>
+        <p>
+            Lichess Insight Hub is your go-to resource for gaining deep insights into the world of Lichess. Our platform is dedicated to unraveling the intricacies of the Berserk system, exploring post-game analysis graphs, and demystifying the Lichess rating system.
+        </p>
+        <p>
+            Our purpose is to empower Lichess enthusiasts with comprehensive knowledge, enabling them to enhance their gameplay, make informed decisions, and elevate their overall Lichess experience.
+        </p>
+        <p>
+            Stay tuned for the latest content updates on Lichess.org, as we bring you valuable insights, strategies, and analyses to stay at the forefront of the chess community.
+        </p>
+        <p>
+            Lichess Insight Hub respects your privacy. While we accept cookies for an enhanced user experience, we store data locally, ensuring your information stays on your device. Your trust and privacy are our top priorities.
+        </p>
     </section>
 
-    <!-- Repeat for other sections with unique styles -->
+    <section id="berserk-section">
+        <h2><a href="breserkinsight.html">Berserk System Insights</a></h2>
+        <p>Detailed explanation of how the Berserk system works on Lichess.</p>
+    </section>
+
+    <section id="analysis-section">
+        <h2><a href="analysisgraph.html">Post-Game Analysis Graphs</a></h2>
+        <p>Exploration of Lichess.org's post-game analysis features.</p>
+    </section>
+
+    <section id="rating-section">
+        <h2><a href="chesssystem.html">Lichess Rating System Demystified</a></h2>
+        <p>Clear breakdown of the Lichess rating system and its components.</p>
+    </section>
+
+    <section id="tv-section">
+        <h2><a href="lichesstv.html">Lichess Tv</a></h2>
+        <p>Clear breakdown of Lichess Tv system where people use to watch top players games.</p>
+    </section>
+
+    <section id="tournament-section">
+        <h2><a href="lichesstournament.html">Lichess Tournament</a></h2>
+        <p>Clear breakdown of Lichess Tournament system where people use to join and play rated and non-rated games against different players, including top players too.</p>
+    </section>
+
+    <section id="cheat-section">
+        <h2><a href="cheatdetection.html">Lichess Cheat System</a></h2>
+        <p>Clear breakdown of Lichess Cheat system where people use to cheat on Lichess to increase individual ratings and play rated and non-rated games against different players, including top players too.</p>
+    </section>
+
+    <section id="developer-section">
+        <h2><a href="lichessdeveloper.html">Lichess Developer 🛠️</a></h2>
+        <p>Clear breakdown of Lichess Developer system where this page shows how Lichess developers work actually on Lichess.</p>
+    </section>
+
+    <section id="moderator-section">
+        <h2><a href="lichessmoderator.html">Lichess Moderator</a></h2>
+        <p>Clear breakdown of Lichess Moderator system where this page shows how Lichess Moderators work actually on Lichess and maintain the website tirelessly and ban cheaters.</p>
+    </section>
+
+    <section id="donate-section">
+        <h2><a href="donate.html">Lichess Donate</a></h2>
+        <p>Clear breakdown of Lichess Donation system where this page shows how Lichess donation works actually on Lichess, where does the money actually go, as the website said to be always free and open source.</p>
+    </section>
+
+    <section id="interface-section">
+        <h2><a href="interface.html">Lichess Interface</a></h2>
+        <p>Clear breakdown of Lichess Interface system where this page shows how Lichess interface works actually on Lichess.</p>
+    </section>
+
+    <section id="leaderboard-section">
+        <h2><a href="leaderboard.html">Lichess Leaderboard</a></h2>
+        <p>Clear breakdown of Lichess Leaderboard system where this page shows how Lichess leaderboard system works actually on Lichess. How players are ranked.</p>
+    </section>
+
+    <section id="personalchatsystem-section">
+        <h2><a href="userratingchart.html">Lichess User Rating Chart</a></h2>
+        <p>Clear breakdown of Lichess User individual personal account rating chart system on Lichess. How it saves data from the day the user gets registered.</p>
+    </section>
+      
+    <section id="appeal-section">
+        <h2><a href="appealsystem.html">Lichess Appeal System</a></h2>
+        <p>Clear breakdown of Lichess Appeal System after any individual user's personal account got banned forever. This page will show lichess appeal system on Lichess. How it works and save from whole enviournmemt.</p>
+    </section>
 
     <footer>
         <p>&copy; 2024 Lichess Insight Hub. All rights reserved.</p>
